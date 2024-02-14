@@ -1,7 +1,7 @@
 # membercare-connector
 
 ```
-$ curl 'https://hoyre-rest-test.membercare.no/api/v1/token?clientApiKey=6ae1f9a3-158a-4e41-8b73-cbee52c3c44f&personToImpersonate=1'
+$ curl 'https://hoyre-rest-test.membercare.no/api/v1/token?clientApiKey=6ae1f9[..]52c3c44f&personToImpersonate=1'
 {"value":"e9f77302-5060-498a-b0eb-4ffb82f06a59","expiration":"2024-02-14T15:34:50"}
 
 $ curl 'https://hoyre-rest-test.membercare.no/api/v1/persons?pageSize=1' -H "token: 9e505ac7-43bc-4dc0-9664-200100ab47af" | jq .

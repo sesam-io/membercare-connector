@@ -12,6 +12,6 @@
     }
   },
   "type": "system:rest",
-  "url_pattern": "https://{{@ site @}}.membercare.no/api/%s",
+  "url_pattern": "https://{{@ account_id @}}.membercare.no/api/%s",
   "verify_ssl": true
 }

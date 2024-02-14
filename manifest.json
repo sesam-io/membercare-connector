@@ -1,6 +1,6 @@
 {
   "additional_parameters": {
-    "site": {}
+    "account_id": {}
   },
   "auth": "api_key",
   "datatypes": {

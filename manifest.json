@@ -4,6 +4,21 @@
   },
   "auth": "api_key",
   "datatypes": {
+    "addresscategories": {
+      "template": "templates/addresscategories.json"
+    },
+    "counties": {
+      "template": "templates/counties.json"
+    },
+    "countries": {
+      "template": "templates/countries.json"
+    },
+    "invoices": {
+      "template": "templates/invoices.json"
+    },
+    "membershipsgroups": {
+      "template": "templates/membershipsgroups.json"
+    },
     "persons": {
       "template": "templates/persons.json"
     }

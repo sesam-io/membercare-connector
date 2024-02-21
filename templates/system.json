@@ -4,6 +4,41 @@
     "token": "$SECRET(api_key)"
   },
   "operations": {
+    "addresscategories-list": {
+      "id_expression": "{{ addressType }}-{{ description }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/addresses/addressCategories"
+    },
+    "counties-list": {
+      "id_expression": "{{ officialCode }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/addresses/counties"
+    },
+    "countries-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/addresses/countries"
+    },
+    "invoices-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/invoices"
+    },
+    "membershipsgroups-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/memberships/groups"
+    },
     "persons-list": {
       "id_expression": "{{ debtorAccountNumber }}",
       "method": "GET",

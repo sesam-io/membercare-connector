@@ -33,7 +33,6 @@
       "replace_entity": true,
       "side_effects": false,
       "system": "{{@ system @}}",
-      "trace": true,
       "type": "rest"
     }
   ],

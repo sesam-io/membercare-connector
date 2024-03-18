@@ -7,7 +7,6 @@
       "operation": "{{@ datatype @}}-list",
       "supports_since": true,
       "system": "{{@ system @}}",
-      "trace": true,
       "type": "rest"
     },
     "type": "pipe"

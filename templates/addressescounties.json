@@ -5,7 +5,6 @@
     "source": {
       "operation": "{{@ datatype @}}-list",
       "system": "{{@ system @}}",
-      "trace": true,
       "type": "rest"
     },
     "type": "pipe"

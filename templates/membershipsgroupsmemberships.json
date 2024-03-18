@@ -1,7 +1,6 @@
 [
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
-    "add_namespaces": false,
     "namespaced_identifiers": false,
     "source": {
       "dataset": "{{@ system @}}-membershipsgroups-collect",
@@ -11,15 +10,6 @@
       {
         "rules": {
           "default": [
-            [
-              "comment",
-              "filter",
-              [
-                "eq",
-                "_S.id",
-                8
-              ]
-            ],
             [
               "copy",
               "*"

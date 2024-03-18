@@ -4,14 +4,26 @@
   },
   "auth": "api_key",
   "datatypes": {
-    "addresscategories": {
-      "template": "templates/addresscategories.json"
+    "addressesaddresscategories": {
+      "template": "templates/addressesaddresscategories.json"
     },
-    "counties": {
-      "template": "templates/counties.json"
+    "addressescounties": {
+      "template": "templates/addressescounties.json"
     },
-    "countries": {
-      "template": "templates/countries.json"
+    "addressescountries": {
+      "template": "templates/addressescountries.json"
+    },
+    "addressescountriespostalcodes": {
+      "template": "templates/addressescountriespostalcodes.json"
+    },
+    "addressesmunicipalities": {
+      "template": "templates/addressesmunicipalities.json"
+    },
+    "arrangements": {
+      "template": "templates/arrangements.json"
+    },
+    "debtors": {
+      "template": "templates/debtors.json"
     },
     "invoices": {
       "template": "templates/invoices.json"
@@ -19,8 +31,35 @@
     "membershipsgroups": {
       "template": "templates/membershipsgroups.json"
     },
+    "membershipsgroupsmemberships": {
+      "template": "templates/membershipsgroupsmemberships.json"
+    },
+    "organizations": {
+      "template": "templates/organizations.json"
+    },
+    "organizationsboardmembers": {
+      "template": "templates/organizationsboardmembers.json"
+    },
+    "organizationsboards": {
+      "template": "templates/organizationsboards.json"
+    },
+    "organizationsboardsboardfunctions": {
+      "template": "templates/organizationsboardsboardfunctions.json"
+    },
+    "organizationscategories": {
+      "template": "templates/organizationscategories.json"
+    },
     "persons": {
       "template": "templates/persons.json"
+    },
+    "personsmemberships": {
+      "template": "templates/personsmemberships.json"
+    },
+    "subscriptionsdefinitions": {
+      "template": "templates/subscriptionsdefinitions.json"
+    },
+    "subscriptionsdefinitionssubscriptions": {
+      "template": "templates/subscriptionsdefinitionssubscriptions.json"
     }
   },
   "system-template": "templates/system.json"

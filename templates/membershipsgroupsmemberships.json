@@ -1,0 +1,49 @@
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-all",
+  "add_namespaces": false,
+  "source": {
+    "dataset": "{{@ system @}}-membershipsgroups-collect",
+    "type": "dataset"
+  },
+  "transform": [
+    {
+      "rules": {
+        "default": [
+          [
+            "comment",
+            "filter",
+            [
+              "eq",
+              "_S.id",
+              8
+            ]
+          ],
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "::properties",
+            [
+              "dict",
+              "id",
+              "_S.id"
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    {
+      "id_expression": "{{ id }}",
+      "operation": "{{@ datatype @}}-list",
+      "replace_entity": true,
+      "side_effects": false,
+      "system": "{{@ system @}}",
+      "trace": true,
+      "type": "rest"
+    }
+  ],
+  "type": "pipe"
+}

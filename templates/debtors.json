@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "add_namespaces": false,
+    "source": {
+      "is_since_comparable": true,
+      "operation": "{{@ datatype @}}-list",
+      "supports_since": true,
+      "system": "{{@ system @}}",
+      "trace": true,
+      "type": "rest"
+    },
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "add_namespaces": false,
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "type": "pipe"
+  }
+]

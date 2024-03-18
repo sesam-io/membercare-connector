@@ -1,0 +1,74 @@
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-all",
+  "add_namespaces": false,
+  "remove_namespaces": true,
+  "source": {
+    "dataset": "{{@ system @}}-persons-collect",
+    "type": "dataset"
+  },
+  "transform": [
+    {
+      "rules": {
+        "default": [
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "::properties",
+            [
+              "dict",
+              "debtorAccountNumber",
+              "_S.debtorAccountNumber"
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    {
+      "operation": "{{@ datatype @}}-list",
+      "replace_entity": false,
+      "side_effects": false,
+      "system": "{{@ system @}}",
+      "trace": true,
+      "type": "rest"
+    },
+    {
+      "rules": {
+        "default": [
+          [
+            "comment",
+            "Use id from response as _id"
+          ],
+          [
+            "add",
+            "_id",
+            [
+              "string",
+              [
+                "first",
+                "_S.response.id"
+              ]
+            ]
+          ],
+          [
+            "merge",
+            "_S.response"
+          ],
+          [
+            "comment",
+            "Preserve reference back to input entity"
+          ],
+          [
+            "copy",
+            "debtorAccountNumber"
+          ]
+        ]
+      },
+      "type": "dtl"
+    }
+  ],
+  "type": "pipe"
+}

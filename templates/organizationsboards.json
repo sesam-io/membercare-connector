@@ -1,0 +1,39 @@
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-all",
+  "add_namespaces": false,
+  "source": {
+    "dataset": "{{@ system @}}-organizations-collect",
+    "type": "dataset"
+  },
+  "transform": [
+    {
+      "rules": {
+        "default": [
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "::properties",
+            [
+              "dict",
+              "identificationNumber",
+              "_S.identificationNumber"
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    {
+      "operation": "{{@ datatype @}}-list",
+      "replace_entity": true,
+      "side_effects": false,
+      "system": "{{@ system @}}",
+      "trace": true,
+      "type": "rest"
+    }
+  ],
+  "type": "pipe"
+}

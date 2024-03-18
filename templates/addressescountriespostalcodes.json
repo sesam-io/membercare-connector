@@ -1,0 +1,40 @@
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-all",
+  "add_namespaces": false,
+  "source": {
+    "dataset": "{{@ system @}}-addressescountries-collect",
+    "type": "dataset"
+  },
+  "transform": [
+    {
+      "rules": {
+        "default": [
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "::properties",
+            [
+              "dict",
+              "iso2Letter",
+              "_S.iso2Letter"
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    {
+      "id_expression": "{{ id }}",
+      "operation": "{{@ datatype @}}-list",
+      "replace_entity": true,
+      "side_effects": false,
+      "system": "{{@ system @}}",
+      "trace": true,
+      "type": "rest"
+    }
+  ],
+  "type": "pipe"
+}

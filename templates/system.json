@@ -1,29 +1,59 @@
 {
   "_id": "{{@ system @}}",
   "headers": {
-    "token": "$SECRET(api_key)"
+    "token": "$SECRET(membercare-api-key)"
   },
   "operations": {
-    "addresscategories-list": {
+    "addressesaddresscategories-list": {
       "id_expression": "{{ addressType }}-{{ description }}",
       "method": "GET",
       "next_page_link": "{{ body.nextPageUrl }}",
       "payload_property": "result",
       "url": "v1/addresses/addressCategories"
     },
-    "counties-list": {
+    "addressescounties-list": {
       "id_expression": "{{ officialCode }}",
       "method": "GET",
       "next_page_link": "{{ body.nextPageUrl }}",
       "payload_property": "result",
       "url": "v1/addresses/counties"
     },
-    "countries-list": {
+    "addressescountries-list": {
       "id_expression": "{{ id }}",
       "method": "GET",
       "next_page_link": "{{ body.nextPageUrl }}",
       "payload_property": "result",
       "url": "v1/addresses/countries"
+    },
+    "addressescountriespostalcodes-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/addresses/countries/{{ properties.iso2Letter }}/postalCodes"
+    },
+    "addressesmunicipalities-list": {
+      "id_expression": "{{ municipalityId }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/addresses/municipalities?countryIso2LetterCode=NO"
+    },
+    "arrangements-list": {
+      "id_expression": "{{ internalId }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/arrangements"
+    },
+    "debtors-list": {
+      "id_expression": "{{ debtorAccountNumber }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "since_property_name": "changedAfter",
+      "updated_expression": "{{ lastChange }}",
+      "url": "v1/debtors"
     },
     "invoices-list": {
       "id_expression": "{{ id }}",
@@ -39,12 +69,74 @@
       "payload_property": "result",
       "url": "v1/memberships/groups"
     },
+    "membershipsgroupsmemberships-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/memberships/groups/{{ properties.id }}/memberships"
+    },
+    "organizations-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/organizations"
+    },
+    "organizationsboardmembers-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/organizations/boardMembers"
+    },
+    "organizationsboards-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "url": "v1/organizations/{{ properties.identificationNumber }}/boards"
+    },
+    "organizationsboardsboardfunctions-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/organizations/boards/boardFunctions"
+    },
+    "organizationscategories-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/organizations/categories"
+    },
     "persons-list": {
       "id_expression": "{{ debtorAccountNumber }}",
       "method": "GET",
       "next_page_link": "{{ body.nextPageUrl }}",
       "payload_property": "result",
       "url": "v1/persons"
+    },
+    "personsmemberships-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/persons/{{ properties.debtorAccountNumber }}/memberships"
+    },
+    "subscriptionsdefinitions-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/subscriptions/definitions"
+    },
+    "subscriptionsdefinitionssubscriptions-list": {
+      "id_expression": "{{ id }}",
+      "method": "GET",
+      "next_page_link": "{{ body.nextPageUrl }}",
+      "payload_property": "result",
+      "url": "v1/subscriptions/definitions/{{ properties.id }}/subscriptions"
     }
   },
   "type": "system:rest",

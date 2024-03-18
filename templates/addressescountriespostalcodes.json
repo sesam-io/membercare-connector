@@ -1,40 +1,50 @@
-{
-  "_id": "{{@ system @}}-{{@ datatype @}}-all",
-  "add_namespaces": false,
-  "namespaced_identifiers": false,
-  "source": {
-    "dataset": "{{@ system @}}-addressescountries-collect",
-    "type": "dataset"
-  },
-  "transform": [
-    {
-      "rules": {
-        "default": [
-          [
-            "copy",
-            "*"
-          ],
-          [
-            "add",
-            "properties",
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "add_namespaces": false,
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-addressescountries-collect",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "rules": {
+          "default": [
             [
-              "dict",
-              "iso2Letter",
-              "_S.iso2Letter"
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "properties",
+              [
+                "dict",
+                "iso2Letter",
+                "_S.iso2Letter"
+              ]
             ]
           ]
-        ]
+        },
+        "type": "dtl"
       },
-      "type": "dtl"
+      {
+        "id_expression": "{{ id }}",
+        "operation": "{{@ datatype @}}-list",
+        "replace_entity": true,
+        "side_effects": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
     },
-    {
-      "id_expression": "{{ id }}",
-      "operation": "{{@ datatype @}}-list",
-      "replace_entity": true,
-      "side_effects": false,
-      "system": "{{@ system @}}",
-      "type": "rest"
-    }
-  ],
-  "type": "pipe"
-}
+    "type": "pipe"
+  }
+]

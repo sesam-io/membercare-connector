@@ -1,73 +1,83 @@
-{
-  "_id": "{{@ system @}}-{{@ datatype @}}-all",
-  "add_namespaces": false,
-  "namespaced_identifiers": false,
-  "source": {
-    "dataset": "{{@ system @}}-persons-collect",
-    "type": "dataset"
-  },
-  "transform": [
-    {
-      "rules": {
-        "default": [
-          [
-            "copy",
-            "*"
-          ],
-          [
-            "add",
-            "properties",
-            [
-              "dict",
-              "debtorAccountNumber",
-              "_S.debtorAccountNumber"
-            ]
-          ]
-        ]
-      },
-      "type": "dtl"
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "add_namespaces": false,
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-persons-collect",
+      "type": "dataset"
     },
-    {
-      "operation": "{{@ datatype @}}-list",
-      "replace_entity": false,
-      "side_effects": false,
-      "system": "{{@ system @}}",
-      "type": "rest"
-    },
-    {
-      "rules": {
-        "default": [
-          [
-            "comment",
-            "Use id from response as _id"
-          ],
-          [
-            "add",
-            "_id",
+    "transform": [
+      {
+        "rules": {
+          "default": [
             [
-              "string",
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "properties",
               [
-                "first",
-                "_S.response.id"
+                "dict",
+                "debtorAccountNumber",
+                "_S.debtorAccountNumber"
               ]
             ]
-          ],
-          [
-            "merge",
-            "_S.response"
-          ],
-          [
-            "comment",
-            "Preserve reference back to input entity"
-          ],
-          [
-            "copy",
-            "debtorAccountNumber"
           ]
-        ]
+        },
+        "type": "dtl"
       },
-      "type": "dtl"
-    }
-  ],
-  "type": "pipe"
-}
+      {
+        "operation": "{{@ datatype @}}-list",
+        "replace_entity": false,
+        "side_effects": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      },
+      {
+        "rules": {
+          "default": [
+            [
+              "comment",
+              "Use id from response as _id"
+            ],
+            [
+              "add",
+              "_id",
+              [
+                "string",
+                [
+                  "first",
+                  "_S.response.id"
+                ]
+              ]
+            ],
+            [
+              "merge",
+              "_S.response"
+            ],
+            [
+              "comment",
+              "Preserve reference back to input entity"
+            ],
+            [
+              "copy",
+              "debtorAccountNumber"
+            ]
+          ]
+        },
+        "type": "dtl"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "type": "pipe"
+  }
+]

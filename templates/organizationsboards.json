@@ -1,39 +1,49 @@
-{
-  "_id": "{{@ system @}}-{{@ datatype @}}-all",
-  "add_namespaces": false,
-  "namespaced_identifiers": false,
-  "source": {
-    "dataset": "{{@ system @}}-organizations-collect",
-    "type": "dataset"
-  },
-  "transform": [
-    {
-      "rules": {
-        "default": [
-          [
-            "copy",
-            "*"
-          ],
-          [
-            "add",
-            "properties",
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "add_namespaces": false,
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-organizations-collect",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "rules": {
+          "default": [
             [
-              "dict",
-              "identificationNumber",
-              "_S.identificationNumber"
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "properties",
+              [
+                "dict",
+                "identificationNumber",
+                "_S.identificationNumber"
+              ]
             ]
           ]
-        ]
+        },
+        "type": "dtl"
       },
-      "type": "dtl"
+      {
+        "operation": "{{@ datatype @}}-list",
+        "replace_entity": true,
+        "side_effects": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
     },
-    {
-      "operation": "{{@ datatype @}}-list",
-      "replace_entity": true,
-      "side_effects": false,
-      "system": "{{@ system @}}",
-      "type": "rest"
-    }
-  ],
-  "type": "pipe"
-}
+    "type": "pipe"
+  }
+]

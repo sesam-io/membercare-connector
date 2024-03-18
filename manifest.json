@@ -8,55 +8,55 @@
       "template": "templates/addressesaddresscategories.json"
     },
     "addressescounties": {
-      "template": "templates/addressescounties.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "addressescountries": {
-      "template": "templates/addressescountries.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "addressescountriespostalcodes": {
       "template": "templates/addressescountriespostalcodes.json"
     },
     "addressesmunicipalities": {
-      "template": "templates/addressesmunicipalities.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "arrangements": {
-      "template": "templates/arrangements.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "debtors": {
       "template": "templates/debtors.json"
     },
     "invoices": {
-      "template": "templates/invoices.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "membershipsgroups": {
-      "template": "templates/membershipsgroups.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "membershipsgroupsmemberships": {
       "template": "templates/membershipsgroupsmemberships.json"
     },
     "organizations": {
-      "template": "templates/organizations.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "organizationsboardmembers": {
-      "template": "templates/organizationsboardmembers.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "organizationsboards": {
       "template": "templates/organizationsboards.json"
     },
     "organizationsboardsboardfunctions": {
-      "template": "templates/organizationsboardsboardfunctions.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "organizationscategories": {
-      "template": "templates/organizationscategories.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "persons": {
-      "template": "templates/persons.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "personsmemberships": {
       "template": "templates/personsmemberships.json"
     },
     "subscriptionsdefinitions": {
-      "template": "templates/subscriptionsdefinitions.json"
+      "template": "templates/addressesaddresscategories.json"
     },
     "subscriptionsdefinitionssubscriptions": {
       "template": "templates/subscriptionsdefinitionssubscriptions.json"

@@ -1,7 +1,7 @@
 {
   "_id": "{{@ system @}}-{{@ datatype @}}-all",
   "add_namespaces": false,
-  "remove_namespaces": true,
+  "namespaced_identifiers": false,
   "source": {
     "dataset": "{{@ system @}}-persons-collect",
     "type": "dataset"
@@ -16,7 +16,7 @@
           ],
           [
             "add",
-            "::properties",
+            "properties",
             [
               "dict",
               "debtorAccountNumber",

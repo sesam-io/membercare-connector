@@ -1,6 +1,7 @@
 {
   "_id": "{{@ system @}}-{{@ datatype @}}-all",
   "add_namespaces": false,
+  "namespaced_identifiers": false,
   "source": {
     "dataset": "{{@ system @}}-organizations-collect",
     "type": "dataset"
@@ -15,7 +16,7 @@
           ],
           [
             "add",
-            "::properties",
+            "properties",
             [
               "dict",
               "identificationNumber",

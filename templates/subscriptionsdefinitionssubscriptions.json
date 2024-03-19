@@ -1,0 +1,49 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-subscriptionsdefinitions-collect",
+      "type": "dataset"
+    },
+    "transform": [
+      {
+        "rules": {
+          "default": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "properties",
+              [
+                "dict",
+                "id",
+                "_S.id"
+              ]
+            ]
+          ]
+        },
+        "type": "dtl"
+      },
+      {
+        "id_expression": "{{ id }}",
+        "operation": "{{@ datatype @}}-list",
+        "replace_entity": true,
+        "side_effects": false,
+        "system": "{{@ system @}}",
+        "type": "rest"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "type": "pipe"
+  }
+]

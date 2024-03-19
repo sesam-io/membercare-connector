@@ -1,18 +1,17 @@
 [
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
-    "add_namespaces": false,
+    "namespaced_identifiers": false,
     "source": {
       "operation": "{{@ datatype @}}-list",
       "system": "{{@ system @}}",
-      "trace": true,
       "type": "rest"
     },
     "type": "pipe"
   },
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-collect",
-    "add_namespaces": false,
+    "namespaced_identifiers": false,
     "source": {
       "dataset": "{{@ system @}}-{{@ datatype @}}-all",
       "type": "dataset"

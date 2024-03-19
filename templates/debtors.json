@@ -1,7 +1,7 @@
 [
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
-    "add_namespaces": false,
+    "namespaced_identifiers": false,
     "source": {
       "is_since_comparable": true,
       "operation": "{{@ datatype @}}-list",
@@ -13,7 +13,7 @@
   },
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-collect",
-    "add_namespaces": false,
+    "namespaced_identifiers": false,
     "source": {
       "dataset": "{{@ system @}}-{{@ datatype @}}-all",
       "type": "dataset"
